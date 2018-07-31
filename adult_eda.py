@@ -72,6 +72,11 @@ std_num = numeric_df.apply(standardize_column)
 # Df contenant les variables discretisees en deciles
 decile_num = numeric_df.apply(decile)
 
+# dummy encoding (drop 1)
+categ_list.remove('CATEG_income')
+dummy_df = pd.get_dummies(df['CATEG_education'], drop_first=True, prefix='Education', dummy_na=True)
+
+
 
 
 
